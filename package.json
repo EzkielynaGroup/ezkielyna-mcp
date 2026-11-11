@@ -1,0 +1,46 @@
+{
+  "name": "ezkielyna-mcp",
+  "version": "1.0.0",
+  "description": "MCP server to ask other AI models, compare answers, search the web and check balance via the Ezkielyna API",
+  "mcpName": "io.github.EzkielynaGroup/ezkielyna-mcp",
+  "type": "module",
+  "bin": {
+    "ezkielyna-mcp": "ezkielyna-mcp.mjs"
+  },
+  "files": [
+    "ezkielyna-mcp.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "second-opinion",
+    "compare-models",
+    "llm",
+    "deepseek",
+    "web-search",
+    "openai-compatible",
+    "claude-code",
+    "claude-desktop",
+    "cursor",
+    "opencode",
+    "indonesia"
+  ],
+  "author": "Ezekiel Lieberhart (Ezkielyna)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EzkielynaGroup/ezkielyna-mcp.git"
+  },
+  "homepage": "https://github.com/EzkielynaGroup/ezkielyna-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/EzkielynaGroup/ezkielyna-mcp/issues"
+  }
+}

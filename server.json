@@ -1,0 +1,42 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.EzkielynaGroup/ezkielyna-mcp",
+  "title": "Ezkielyna",
+  "description": "Ask or compare other AI models, web search and balance via the Ezkielyna API (prepaid key).",
+  "repository": {
+    "url": "https://github.com/EzkielynaGroup/ezkielyna-mcp",
+    "source": "github"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "ezkielyna-mcp",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "EZKIELYNA_API_KEY",
+          "description": "Ezkielyna API key (Standard or Auto group)",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "EZKIELYNA_MAX_CALLS",
+          "description": "Calls per session for ask/compare/search (default 50)",
+          "isRequired": false,
+          "format": "string"
+        },
+        {
+          "name": "EZKIELYNA_MAX_TOKENS",
+          "description": "Upper limit for max_tokens (default 4096)",
+          "isRequired": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
