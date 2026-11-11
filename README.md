@@ -1,5 +1,9 @@
 # Ezkielyna MCP
 
+<!-- ezk:badges -->
+[![npm](https://img.shields.io/npm/v/ezkielyna-mcp?color=c2410c)](https://www.npmjs.com/package/ezkielyna-mcp) [![CI](https://github.com/EzkielynaGroup/ezkielyna-mcp/actions/workflows/test.yml/badge.svg)](https://github.com/EzkielynaGroup/ezkielyna-mcp/actions/workflows/test.yml) [![MCP Registry](https://img.shields.io/badge/MCP_Registry-io.github.EzkielynaGroup%2Fezkielyna--mcp-1f6feb)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.EzkielynaGroup/ezkielyna-mcp) [![License: MIT](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+<!-- /ezk:badges -->
+
 An [MCP](https://modelcontextprotocol.io) server that lets your AI assistant **ask other AI models for a second opinion**, compare 2-4 answers side by side, search the web and check your balance, all through the [Ezkielyna API](https://ezkielyna.store/?utm_source=github&utm_medium=readme&utm_campaign=ezkielyna-mcp). Works in Claude Code, Claude Desktop, Cursor, OpenCode and any other MCP client that runs local stdio servers.
 
 Example (in Claude Code): *"Ask deepseek-v4.1-flash and glm-5.3 to review the SQL in `db/report.sql` for injection risks, then tell me where they disagree."*
@@ -197,3 +201,17 @@ Tidak. Ezkielyna adalah API gateway independen.
 ## License
 
 MIT, Copyright (c) 2026 Ezekiel Lieberhart (Ezkielyna). Ezkielyna is an independent API gateway and is not affiliated with the model vendors or the MCP client makers.
+
+<!-- ezk:toolkit -->
+---
+
+### Part of the Ezkielyna developer toolkit
+
+Open-source tools from [Ezkielyna](https://ezkielyna.store/?utm_source=github&utm_medium=readme&utm_campaign=ezkielyna-mcp), an independent OpenAI- and Anthropic-compatible AI API gateway (pay with QRIS, USDT or Binance Pay; no credit card).
+
+| No API key needed | With an Ezkielyna key |
+|---|---|
+| [mcp-bmkg](https://github.com/EzkielynaGroup/mcp-bmkg) · [mcp-wilayah-indonesia](https://github.com/EzkielynaGroup/mcp-wilayah-indonesia) · [mcp-hari-libur-indonesia](https://github.com/EzkielynaGroup/mcp-hari-libur-indonesia) · [mcp-rupiah](https://github.com/EzkielynaGroup/mcp-rupiah) · [mcp-qris](https://github.com/EzkielynaGroup/mcp-qris) · [ai-model-status-mcp](https://github.com/EzkielynaGroup/ai-model-status-mcp) | [ezkielyna-mcp](https://github.com/EzkielynaGroup/ezkielyna-mcp) · [ezkielyna-image-mcp](https://github.com/EzkielynaGroup/ezkielyna-image-mcp) · [ezkielyna-audio-mcp](https://github.com/EzkielynaGroup/ezkielyna-audio-mcp) · [n8n-nodes-ezkielyna](https://github.com/EzkielynaGroup/n8n-nodes-ezkielyna) |
+
+More: [all repositories](https://github.com/EzkielynaGroup) · [awesome-mcp-indonesia](https://github.com/EzkielynaGroup/awesome-mcp-indonesia) · [awesome-ai-indonesia](https://github.com/EzkielynaGroup/awesome-ai-indonesia)
+<!-- /ezk:toolkit -->
