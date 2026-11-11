@@ -64,6 +64,7 @@ before(async () => {
       maxActive = Math.max(maxActive, active);
       await new Promise(r => setTimeout(r, 150));
       active--;
+      if (model === 'limited-model') return json(res, 403, { error: { message: 'This token has no access to model limited-model', type: 'new_api_error' } });
       if (model === 'broken-model') return json(res, 503, { error: { message: 'no available channel for model broken-model under group default', type: 'new_api_error' } });
       if (model === 'empty-model') {
         return json(res, 200, { model, choices: [{ message: { role: 'assistant', content: '', reasoning_content: 'thinking...' }, finish_reason: 'length' }], usage: { prompt_tokens: 10, completion_tokens: 50, total_tokens: 60 } });
@@ -217,7 +218,7 @@ test('ask_model explains an empty answer cut off by max_tokens', async () => {
 });
 
 test('compare_models runs models in parallel and reports a failing model without failing the rest', async () => {
-  const mcp = await initialized({ EZKIELYNA_MAX_CALLS: '3' });
+  const mcp = await initialized({ EZKIELYNA_MAX_CALLS: '4' });
   maxActive = 0;
   const r = await mcp.call('compare_models', { prompt: 'Is this SQL safe?', models: ['deepseek-v4.1-flash', 'claude-sonnet-5.5', 'broken-model'] });
   assert.ok(!r.isError, textOf(r));
@@ -230,8 +231,11 @@ test('compare_models runs models in parallel and reports a failing model without
   assert.match(t, /## 3\. broken-model\n\nGAGAL \/ FAILED: .*cannot use this model/);
   assert.match(t, /broken-model failed/);
   // The refused call gave its slot back: 2 of 3 used, so one more call fits.
-  assert.match(t, /Session: 2\/3/);
+  assert.match(t, /Session: 2\/4/);
   assert.ok(!(await mcp.call('ask_model', { prompt: 'x' })).isError);
+  const lim = await mcp.call('ask_model', { prompt: 'x', model: 'limited-model' });
+  assert.ok(lim.isError);
+  assert.match(textOf(lim), /model limits/);
   await mcp.stop();
 });
 
